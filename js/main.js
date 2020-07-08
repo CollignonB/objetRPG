@@ -52,7 +52,7 @@ class wizard {
     constructor(name) {
         this._name = name;
         this._hp = 30;
-        this.mp = 30;
+        this._mp = 30;
         this._attackValue = 5;
         this._defenceValue = 15;
     }
@@ -75,6 +75,13 @@ class wizard {
         return this._hp;
     }
 
+    set mp(mp) {
+        this._mp = mp;
+    }
+
+    get mp() {
+        return this._mp;
+    }
     set attackValue(attackValue) {
         if (attackValue > 0 && attackValue <= 15) {
             this._attackValue = attackValue;
@@ -119,6 +126,6 @@ let wizard1 = new wizard("Mazalera");
 guerrier1.attack(wizard1);
 guerrier2.attack(wizard1);
 
-//wizard1.mp = 9;
+wizard1.mp = 9;
 wizard1.soin(wizard1);
 wizard1.attack(guerrier1);
